@@ -5,54 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untuk Kamu ❤️</title>
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #fff0f3; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-            overflow: hidden;
-            text-align: center;
-        }
-        .container { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 25px rgba(255, 75, 110, 0.2); 
-            width: 85%; 
-            max-width: 400px; 
-        }
+        body { font-family: sans-serif; background-color: #fff0f3; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; text-align: center; }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 75, 110, 0.2); width: 85%; max-width: 400px; }
         h1 { color: #ff4d6d; font-size: 1.5rem; }
-        p { color: #590d22; line-height: 1.6; }
-        .btns { margin-top: 30px; position: relative; height: 100px; }
-        button { 
-            padding: 12px 25px; 
-            font-size: 16px; 
-            font-weight: bold; 
-            border: none; 
-            border-radius: 30px; 
-            cursor: pointer; 
-            transition: 0.2s;
-        }
+        .btns { margin-top: 30px; position: relative; height: 120px; }
+        button { padding: 12px 25px; font-size: 16px; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; }
         #btnYa { background-color: #ff4d6d; color: white; }
-        #btnTidak { 
-            background-color: #ffb3c1; 
-            color: #590d22; 
-            position: absolute; 
-            left: 50%; 
-            transform: translateX(10px); 
-        }
+        #btnTidak { background-color: #ffb3c1; color: #590d22; position: absolute; left: 50%; transform: translateX(10px); }
         #pesanBerhasil { display: none; }
-        .emoji { font-size: 50px; }
     </style>
 </head>
 <body>
-
     <div class="container" id="mainBox">
         <div id="pertanyaan">
-            <div class="emoji">💖</div>
+            <div style="font-size: 50px;">💖</div>
             <h1>Halo, Aku Mau Ngomong...</h1>
             <p>Sejujurnya aku udah lama ngerasain ini. Kamu mau gak jadi pacarku?</p>
             <div class="btns">
@@ -60,33 +26,26 @@
                 <button id="btnTidak" onmouseover="lari()" onclick="lari()">GAK</button>
             </div>
         </div>
-
         <div id="pesanBerhasil">
-            <div class="emoji">🎉🥳</div>
+            <div style="font-size: 50px;">🎉🥳</div>
             <h1>YEYYY! ❤️</h1>
-            <p>I knew it! Makasih udah mau kasih kesempatan. Aku janji bakal bikin kamu bahagia setiap hari!</p>
-            <p>Langsung chat aku ya!</p>
+            <p>Makasih ya udah mau kasih kesempatan!</p>
             <button id="btnYa" onclick="chatWA()">Kirim Jawaban ke WA</button>
         </div>
     </div>
-
     <script>
         function lari() {
             const btn = document.getElementById('btnTidak');
-            // Menghitung batas layar agar tombol tidak lari keluar layar HP
             const x = Math.random() * (window.innerWidth - btn.clientWidth);
             const y = Math.random() * (window.innerHeight - btn.clientHeight);
-            
-            btn.style.position = 'fixed'; // Pindah posisi ke layar secara bebas
+            btn.style.position = 'fixed';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
         }
-
         function berhasil() {
             document.getElementById('pertanyaan').style.display = 'none';
             document.getElementById('pesanBerhasil').style.display = 'block';
         }
-
         function chatWA() {
             const pesan = "Iya, aku mau jadi pacar kamu! ❤️✨";
             const noWA = "628123456789"; // GANTI DENGAN NOMOR WA KAMU
